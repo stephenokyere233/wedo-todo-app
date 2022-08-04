@@ -30,7 +30,7 @@ document.addEventListener("keydown", function keypressed(e) {
   else if (e.key == "Enter" ) {
     keyInput.value =keyInput.value;
   } 
-  else if (e.key == "Alt" || e.key == "Shift") {
+  else if (e.key == "Alt" || e.key == "Shift"||e.key=='Çontrol') {
     keyInput.value=keyInput.value;
   } else {
     keyInput.value += e.key;
@@ -163,13 +163,13 @@ ul.addEventListener("click", removeItem);
 // keyfunctions
 const togglePopUp = () => {
   // check if overlay is hidden
-  if (overlayForm.classList.contains("hide")) {
-    overlayForm.classList.add("flex");
-    overlayForm.classList.remove('hide')
-  } else {
+  if (overlayForm.classList.contains("flex")) {
     overlayForm.classList.add("hide");
-     overlayForm.classList.remove("flex");
-  }
+    overlayForm.classList.remove('flex')}
+  // } else {
+  //   overlayForm.classList.add("hide");
+  //   //  overlayForm.classList.remove("flex");
+  // }
 };
 document.addEventListener("keydown", function (e) {
   if (e.key == "Escape") {
