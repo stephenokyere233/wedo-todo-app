@@ -23,8 +23,9 @@
      width: 100%;
      height: 100vh;
      font-family:var(--myfont);
-     background:var(--body) ;
+     background:var(--white) ;
      color:var(--text);
+     overflow: hidden;
  }
 
  header {
@@ -49,16 +50,18 @@
  .wrapper {
      width: 500px;
      min-width: 400px;
-     border-radius: 10px;
-     height: 38rem;
-     margin: 40px auto;
+     /* border-radius: 10px; */
+     height: 100vh;
+     margin:  auto;
      color: var(--text);
      background: var(--white);
-     box-shadow: 2px 2px 5px;
-     position: relative;
+     /* box-shadow: 2px 2px 5px; */
+     /* position: relative; */
      display: flex;
      flex-direction: column;
      align-items: center;
+     /* position: relative; */
+     /* overflow: hidden; */
  }
  .greetings {
      display: flex;
@@ -93,7 +96,7 @@
  }
  #watermark{
     height: 420px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     
     justify-content: center;
     align-items: center;
@@ -108,13 +111,20 @@
  }
 
  .tasks {
-     height: 420px;
+     height:70vh;
      overflow-y: scroll;
+ }
+ footer{
+    /* position: absolute; */
+    /* top: 95%; */
+    font-size: 20px;
+    font-weight: bold;
+
  }
 
  .list-item {
      font-size: 20px;
-     font-size: 20px;
+     font-size: 24px;
      padding: 5px;
      margin: 10px;
      list-style: none;
@@ -207,13 +217,19 @@
     opacity: 20%;
  }
 
- @media screen and (max-width:768px) {
+ @media screen and (max-width:850px) {
      .wrapper {
          width: 100%;
-         height: 150%;
+         height: 105vh;
          margin: 0%;
          align-items: center;
+         overflow: hidden;
+         box-shadow: none;
      }
+        .tasks {
+            height: 65vh;
+            
+        }
     
      /* header{
         width: 100%;
@@ -222,12 +238,47 @@
 
      body {
          overflow: hidden;
+         
      }
 
      #overlay-form {
          top: 30%;
      }
+  footer {
+      /* border:2px solid black; */
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* top: 85%; */
+      /* border-top: 2px solid white; */
+  }
 
+
+ }
+ @media screen and (max-width:480px){
+    .tasks {
+            height:70vh ;
+        }
+        .wrapper{
+            overflow: hidden;
+            height:110vh;
+        }
+        body{
+            overflow: hidden;
+            height: 100vh;
+        }
+        footer {
+            /* border:2px solid black; */
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           /* top: 85%; */
+                      /* border-top: 2px solid white; */
+                  }
 
 
  }

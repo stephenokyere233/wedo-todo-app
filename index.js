@@ -19,19 +19,29 @@ window.addEventListener("load", () => {
   });
 });
 // end localStorage declaration
-// var keyInput = document.querySelector("#overlay-form-input");
-// var overlayForm = document.querySelector("#overlay-form");
-// document.addEventListener("keydown", (e) => {
-//   if (e.key == "Backspace") {
-//     // keyInput.value='';
-//     keyInput.value = keyInput.value.slice(0, -1);
-//   } else {
-//     keyInput.value += e.key;
-//   }
+var keyInput = document.querySelector("#overlay-form-input");
+var overlayForm = document.querySelector("#overlay-form");
+document.addEventListener("keydown", function keypressed(e) {
 
-//   console.log(e);
-// });
+  if(overlayForm.classList.contains('flex')){
+     if (e.key == "Backspace") {
+    keyInput.value = keyInput.value.slice(0,-1);
+  } 
+  else if (e.key == "Enter" ) {
+    keyInput.value =keyInput.value;
+  } 
+  else if (e.key == "Alt" || e.key == "Shift") {
+    keyInput.value=keyInput.value;
+  } else {
+    keyInput.value += e.key;
+  }
+  }else{
+    keyInput.value="";
+  }
+ 
 
+  console.log(e);
+});
 
 // functional add button which shows overlay form onclick
 var addBtn = document.querySelector("#addBtn");
@@ -44,7 +54,7 @@ addBtn.addEventListener("click", () => {
     overlayForm.classList.add("flex");
     container.style.opacity = "20%";
     var overlayInputValue = document.querySelector("#overlay-form-input").value;
-    overlayInputValue="";
+    overlayInputValue = "";
     console.log(overlayInputValue);
   }
 });
@@ -57,6 +67,7 @@ const clr = () => {
     overlayForm.classList.add("hide");
     overlayForm.classList.remove("flex");
     container.style.opacity = "100%";
+    invalid.textContent = "";
   }
 };
 cancel.addEventListener("click", clr);
@@ -70,17 +81,15 @@ var invalid = document.querySelector("#invalid");
 var ul = document.querySelector(".tasks");
 // var list = document.createElement("li");
 var taskCount = 0;
-    var watermark = document.querySelector("#watermark");
-    const showWatermark = () => {
-      if (watermark.classList.contains('flex')) {
-        watermark.classList.remove("flex");
-         watermark.classList.add("hide");
-        // watermark.style.display='none';
-        // container.style.color='red';
-        // ul.removeChild(watermark);
-       
-      }
-    };
+var watermark = document.querySelector("#watermark");
+const showWatermark = () => {
+  if (watermark.classList.contains("flex") ) {
+    watermark.classList.remove("flex");
+    watermark.classList.add("hide");
+  }
+  // else if(taskCount)
+
+};
 const saveTodo = () => {
   var overlayInputValue = document.querySelector("#overlay-form-input").value;
 
@@ -96,7 +105,11 @@ const saveTodo = () => {
     list.classList.add("list-item");
     list.textContent = overlayInputValue;
     taskCount++;
-    console.log(taskCount);
+    var addlist=taskCount;
+     console.log(`addlist is ${addlist}`);
+  
+    // console.log(taskCount);
+      console.log(`the number of lists is ${taskCount}`);
     var deleteBtn = document.createElement("button");
     deleteBtn.className = "trash";
     var binIcon = document.createElement("i");
@@ -104,36 +117,44 @@ const saveTodo = () => {
     deleteBtn.appendChild(binIcon);
     list.append(deleteBtn);
 
-
     ul.append(list);
     console.log(overlayInputValue);
     console.log(list);
-    var counter = list++;
-    console.log(counter);
+    overlayInput.value = "";
+    invalid.textContent = "";
+    
+    // var counter = 0;
+    // counter=list++;
+    // console.log(counter);
   }
 };
-function onEnter(){
-  if(!(overlayForm.classList.contains('hide'))){
+function onEnter() {
+  if (!overlayForm.classList.contains("hide")) {
     saveTodo();
-  }else{
-    overlayInputValue="";
+  } else {
+    overlayInputValue = "";
   }
-  
 }
 save.addEventListener("click", saveTodo);
-save.addEventListener('click',showWatermark);
+save.addEventListener("click", showWatermark);
 
 // removeItem from list
 var task = document.querySelector(".tasks");
 var li = document.querySelector(".list-item");
 function removeItem(e) {
   if (e.target.classList.contains("fa-trash")) {
-    console.log(1);
+    // console.log(1);
 
     if (confirm("Are you sure?")) {
       var target = e.target.parentElement.parentElement;
       task.removeChild(target);
-      console.log(target);
+      // console.log(target);
+      taskCount--;
+      var removelist=taskCount;
+      console.log(`removelist is ${removelist}`);
+      // console.log(taskCount);
+      console.log(`the number of lists is ${taskCount}`);
+      console.log(removelist);
     }
   }
 }
@@ -144,27 +165,25 @@ const togglePopUp = () => {
   // check if overlay is hidden
   if (overlayForm.classList.contains("hide")) {
     overlayForm.classList.add("flex");
+    overlayForm.classList.remove('hide')
   } else {
     overlayForm.classList.add("hide");
+     overlayForm.classList.remove("flex");
   }
 };
 document.addEventListener("keydown", function (e) {
   if (e.key == "Escape") {
     togglePopUp();
-    
+    invalid.textContent = "";
+    keyInput.value="";
+
     container.style.opacity = "100%";
   } else if (e.key === "Enter") {
-    // saveTodo();
     onEnter();
     showWatermark();
     container.style.opacity = "100%";
   }
-  // overlayInputValue = "";
+ 
 });
-// var moon=document.querySelector('.moon');
-// var wrapper=document.querySelector('.wrapper')
-// moon.addEventListener('click',()=>{
-// wrapper.classList.toggle('dark');
 
-// })
  
