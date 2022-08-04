@@ -1,0 +1,233 @@
+ :root{
+      --bg:#222;
+      --body:white;
+      --brand:blueviolet;
+      --white:rgb(243, 244, 246);
+      --myfont:"Source Sans Pro",
+        sans-serif;
+        --text:black;
+    }
+    /* .dark{
+        --bg: rgb(243, 244, 246);
+        --white:#222 ;
+        --body:rgb(24, 24, 24);
+        --text:#fff;
+    } */
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0%;
+ }
+
+ body {
+     width: 100%;
+     height: 100vh;
+     font-family:var(--myfont);
+     background:var(--body) ;
+     color:var(--text);
+ }
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 6px 10px;
+ }
+
+ header img {
+     width: 50px;
+     margin-bottom: 5px;
+     border-radius: 9999px;
+     object-fit: contain;
+     margin-left: 20px;
+ }
+
+ h1 span {
+     color:var(--brand);
+ }
+
+ .wrapper {
+     width: 500px;
+     min-width: 400px;
+     border-radius: 10px;
+     height: 38rem;
+     margin: 40px auto;
+     color: var(--text);
+     background: var(--white);
+     box-shadow: 2px 2px 5px;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ .greetings {
+     display: flex;
+     align-items: baseline;
+     font-size: 20px;
+ }
+ .greetings,
+ .new-task-header {
+     margin: 10px 20px;
+ }
+
+ .greetings input {
+     border: none;
+     width: 50%;
+     font-size: 26px;
+     font-weight: bold;
+     padding-left: 15px;
+     background:transparent;
+     text-transform: capitalize;
+ }
+ input:focus{
+    outline: none;
+ }
+
+ .new-task-header{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .new-task-header h2 {
+     opacity: 50%;
+ }
+ #watermark{
+    height: 420px;
+    border: 2px solid black;
+    
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    /* display: flex; */
+    z-index: 1;
+    opacity: 30%;
+    text-transform: capitalize;
+ }
+ #addBtn {
+     cursor: pointer;
+ }
+
+ .tasks {
+     height: 420px;
+     overflow-y: scroll;
+ }
+
+ .list-item {
+     font-size: 20px;
+     font-size: 20px;
+     padding: 5px;
+     margin: 10px;
+     list-style: none;
+     border-left: 4px solid blueviolet;
+     border-radius: 2px;
+     text-transform: capitalize;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ #overlay-form {
+     padding: 20px;
+     border-radius: 10px;
+     position: absolute;
+     top: 40%;
+     box-shadow: 2px 2px 4px ;
+     margin: auto;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 350px;
+     height: 200px;
+     z-index: 2;
+     background: rgb(243, 244, 246);
+     
+ }
+ .flex{
+    display: flex;
+ }
+ .hide{
+    display: none;
+ }
+ #invalid{
+    font-size: 25px;
+    margin:auto 25px;
+ }
+ .trash{
+    width: 20px;
+    border: none;
+    cursor: pointer;
+ }
+ .trash svg{
+    width: 20px;
+    border: none;
+ }
+ /* .flex{
+    display: flex;
+
+ }
+ .hide {
+     display: none;
+ } */
+
+ #overlay-form button {
+     padding: 10px;
+     margin: 10px;
+     background: blueviolet;
+     border: none;
+     border-radius: 10px;
+     font-size: 20px;
+     text-transform: capitalize;
+ }
+
+ #overlay-form-input{
+     border-bottom: 3px solid var(--brand);
+     width: 100%;
+     border-top: none;
+    border-left: none;
+    border-right:none ;
+     font-size: 30px;
+   
+     padding-left: 50px;
+     margin: 0 auto;
+     background: transparent;
+ }
+ #overlay-form-input::placeholder{
+    opacity: 50%;
+ }
+ #submit,
+ .clear {
+     cursor: pointer;
+ }
+
+ svg {
+     width: 20px;
+     cursor: pointer;
+ }
+ .opacity{
+    opacity: 20%;
+ }
+
+ @media screen and (max-width:768px) {
+     .wrapper {
+         width: 100%;
+         height: 150%;
+         margin: 0%;
+         align-items: center;
+     }
+    
+     /* header{
+        width: 100%;
+        justify-content: space-around;
+     } */
+
+     body {
+         overflow: hidden;
+     }
+
+     #overlay-form {
+         top: 30%;
+     }
+
+
+
+ }
