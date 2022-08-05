@@ -19,29 +19,29 @@ window.addEventListener("load", () => {
   });
 });
 // end localStorage declaration
-var keyInput = document.querySelector("#overlay-form-input");
-var overlayForm = document.querySelector("#overlay-form");
-document.addEventListener("keydown", function keypressed(e) {
+// var keyInput = document.querySelector("#overlay-form-input");
+// var overlayForm = document.querySelector("#overlay-form");
+// document.addEventListener("keydown", function keypressed(e) {
 
-  if(overlayForm.classList.contains('flex')){
-     if (e.key == "Backspace") {
-    keyInput.value = keyInput.value.slice(0,-1);
-  } 
-  else if (e.key == "Enter" ) {
-    keyInput.value =keyInput.value;
-  } 
-  else if (e.key == "Alt" || e.key == "Shift"||e.key=='Çontrol') {
-    keyInput.value=keyInput.value;
-  } else {
-    keyInput.value += e.key;
-  }
-  }else{
-    keyInput.value="";
-  }
+//   if(overlayForm.classList.contains('flex')){
+//      if (e.key == "Backspace") {
+//     keyInput.value = keyInput.value.slice(0,-1);
+//   } 
+//   else if (e.key == "Enter" ) {
+//     keyInput.value =keyInput.value;
+//   } 
+//   else if (e.key == "Alt" || e.key == "Shift"||e.key=='Çontrol') {
+//     keyInput.value=keyInput.value;
+//   } else {
+//     keyInput.value += e.key;
+//   }
+//   }else{
+//     keyInput.value="";
+//   }
  
 
-  console.log(e);
-});
+//   console.log(e);
+// });
 
 // functional add button which shows overlay form onclick
 var addBtn = document.querySelector("#addBtn");
@@ -175,7 +175,7 @@ document.addEventListener("keydown", function (e) {
   if (e.key == "Escape") {
     togglePopUp();
     invalid.textContent = "";
-    keyInput.value="";
+//     keyInput.value="";
 
     container.style.opacity = "100%";
   } else if (e.key === "Enter") {
