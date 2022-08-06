@@ -112,7 +112,7 @@
 
  .tasks {
      height:70vh;
-     overflow-y: scroll;
+     overflow-y: hidden;
  }
  footer{
     /* position: absolute; */
@@ -146,12 +146,16 @@
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     width: 350px;
+     width: 380px;
      height: 200px;
      z-index: 2;
      background: rgb(243, 244, 246);
      
  }
+  #overlay-form h2 {
+      margin-bottom: 25px;
+      letter-spacing: 0.1em;
+  }
  .flex{
     display: flex;
  }
@@ -227,22 +231,11 @@
          box-shadow: none;
      }
         .tasks {
-            height: 65vh;
-            
+            height: 65vh;  
         }
-    
-     /* header{
-        width: 100%;
-        justify-content: space-around;
-     } */
-
      body {
          overflow: hidden;
          
-     }
-
-     #overlay-form {
-         top: 4;
      }
   footer {
       /* border:2px solid black; */
@@ -254,8 +247,6 @@
       /* top: 85%; */
       /* border-top: 2px solid white; */
   }
-
-
  }
  @media screen and (max-width:480px){
     .tasks {
