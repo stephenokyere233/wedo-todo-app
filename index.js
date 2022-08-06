@@ -8,32 +8,6 @@ window.addEventListener("load", () => {
   });
 });
 // end localStorage declaration
-<<<<<<< HEAD
-=======
-// var keyInput = document.querySelector("#overlay-form-input");
-// var overlayForm = document.querySelector("#overlay-form");
-// document.addEventListener("keydown", function keypressed(e) {
-
-//   if(overlayForm.classList.contains('flex')){
-//      if (e.key == "Backspace") {
-//     keyInput.value = keyInput.value.slice(0,-1);
-//   } 
-//   else if (e.key == "Enter" ) {
-//     keyInput.value =keyInput.value;
-//   } 
-//   else if (e.key == "Alt" || e.key == "Shift"||e.key=='Çontrol') {
-//     keyInput.value=keyInput.value;
-//   } else {
-//     keyInput.value += e.key;
-//   }
-//   }else{
-//     keyInput.value="";
-//   }
- 
-
-//   console.log(e);
-// });
->>>>>>> a2c40153c870ddd975a139278e6905f153bb98ec
 
 // functional add button which shows overlay form onclick
 var addBtn = document.querySelector("#addBtn");
@@ -191,12 +165,7 @@ document.addEventListener("keydown", function (e) {
     togglePopUp();
     // makes the paragraph content zero
     invalid.textContent = "";
-<<<<<<< HEAD
     keyInput.value = "";
-=======
-//     keyInput.value="";
-
->>>>>>> a2c40153c870ddd975a139278e6905f153bb98ec
     container.style.opacity = "100%";
      console.log("Cancelled addition");
   } else if (e.key === "Enter") {
@@ -205,8 +174,3 @@ document.addEventListener("keydown", function (e) {
     container.style.opacity = "100%";
   }
 });
-<<<<<<< HEAD
-=======
-
- 
->>>>>>> a2c40153c870ddd975a139278e6905f153bb98ec
