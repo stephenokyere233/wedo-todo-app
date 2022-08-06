@@ -91,7 +91,7 @@ const saveTodo = () => {
 
     var binIcon = document.createElement("i");
     binIcon.classList.add("fa-solid", "fa-trash", "fa-2xl");
-    binIcon.setAttribute("accesskey", "d");
+    binIcon.setAttribute("accesskey", "r");
     deleteBtn.appendChild(binIcon);
     list.append(deleteBtn);
 
