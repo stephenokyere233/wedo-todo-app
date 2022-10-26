@@ -112,8 +112,14 @@
 
  .tasks {
      height:70vh;
-     overflow-y: hidden;
- }
+     overflow-y: scroll;
+       -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tasks::-webkit-scrollbar {
+  display: none;
+}
+ 
  footer{
     /* position: absolute; */
     /* top: 95%; */
